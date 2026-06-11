@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Employee Invoice</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#4facfe,#00f2fe);
+    padding:20px;
+}
+
+.invoice-card{
+    max-width:1000px;
+    margin:auto;
+    background:#858588;
+    border-radius:20px;
+    padding:25px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:3px solid #4facfe;
+    padding-bottom:15px;
+    margin-bottom:20px;
+}
+
+.header h1{
+    color:#0077ff;
+}
+
+.header p{
+    color: #eaee12;
+}
+
+.employee-info{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:15px;
+    margin-bottom:20px;
+}
+
+.info-box{
+    background:#d0d5db;
+    padding:15px;
+    border-radius:14px;
+    box-shadow:0 3px 8px rgba(0,0,0,0.1);
+}
+
+.info-box h3{
+    color:#0077ff;
+    margin-bottom:10px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:10px;
+}
+
+th{
+    background:#0077ff;
+    color:white;
+    padding:12px;
+}
+
+td{
+    padding:12px;
+    text-align:center;
+    border-bottom:1px solid #ddd;
+}
+
+tr:hover{
+    background-color:#7a9981;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.total-box{
+    margin-top:20px;
+    display:flex;
+    justify-content:flex-end;
+}
+
+.total{
+    width:300px;
+    background:#f7f9fc;
+    padding:15px;
+    border-radius:12px;
+    box-shadow:0 3px 8px rgba(0,0,0,0.1);
+}
+
+.total p{
+    display:flex;
+    justify-content:space-between;
+    margin:10px 0;
+}
+
+.net{
+    font-size:20px;
+    color:green;
+    font-weight:bold;
+}
+
+.footer{
+    text-align:center;
+    margin-top:25px;
+    color:#666;
+}
+/* Phones (<480px) */
+    @media (max-width: 480px) {
+      body { background: #ffebee; }
+      header { background: #d32f2f; }
+      .container { grid-template-columns: 1fr; }
+      .box { background: #ffcdd2; font-size: 14px; }
+    }
+
+    /* Large Phones / Small Tablets (481px–767px) */
+    @media (min-width: 481px) and (max-width: 767px) {
+      body { background: #fff3e0; }
+      header { background: #ef6c00; }
+      .container { grid-template-columns: repeat(2, 1fr); }
+      .box { background: #ffe0b2; font-size: 16px; }
+    }
+
+    /* Tablets (768px–1024px) */
+    @media (min-width: 768px) and (max-width: 1024px) {
+      body { background: #e8f5e9; }
+      header { background: #2e7d32; }
+      .container { grid-template-columns: repeat(3, 1fr); }
+      .box { background: #c8e6c9; font-size: 18px; }
+    }
+
+    /* Small Laptops (1025px–1280px) */
+    @media (min-width: 1025px) and (max-width: 1280px) {
+      body { background: #e3f2fd; }
+      header { background: #1565c0; }
+      .container { grid-template-columns: repeat(4, 1fr); }
+      .box { background: #bbdefb; font-size: 20px; }
+    }
+
+    /* Desktops (1281px–1600px) */
+    @media (min-width: 1281px) and (max-width: 1600px) {
+      body { background: #f3e5f5; }
+      header { background: #6a1b9a; }
+      .container { grid-template-columns: repeat(5, 1fr); }
+      .box { background: #e1bee7; font-size: 22px; }
+    }
+
+    /* Ultra Wide (>1600px) */
+    @media (min-width: 1601px) {
+      body { background: #f9fbe7; }
+      header { background: #827717; }
+      .container { grid-template-columns: repeat(6, 1fr); }
+      .box { background: #f0f4c3; font-size: 24px; }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="invoice-card">
+
+    <div class="header">
+        <div>
+            <h1>AVC Technologies</h1>
+            <p>Chennai, Tamil Nadu</p>
+        </div>
+
+        <div>
+            <h2>Employee Invoice</h2>
+            <p>Invoice No: INV001</p>
+            <p>Date: 10-06-2026</p>
+        </div>
+    </div>
+
+    <div class="employee-info">
+        <div class="info-box">
+            <h3>Employee Details</h3>
+            <p><b>Name:</b> Subraja</p>
+            <p><b>ID:</b> EMP001</p>
+            <p><b>Department:</b> IT</p>
+        </div>
+
+        <div class="info-box">
+            <h3>Payment Details</h3>
+            <p><b>Month:</b> June</p>
+            <p><b>Working Days:</b> 26</p>
+            <p><b>Status:</b> Paid</p>
+        </div>
+    </div>
+
+    <table>
+        <tr>
+            <th>Description</th>
+            <th>Amount</th>
+        </tr>
+
+        <tr>
+            <td>Basic Salary</td>
+            <td>₹25,000</td>
+        </tr>
+
+        <tr>
+            <td>Bonus</td>
+            <td>₹2,000</td>
+        </tr>
+
+        <tr>
+            <td>Allowance</td>
+            <td>₹1,500</td>
+        </tr>
+
+        <tr>
+            <td>Tax Deduction</td>
+            <td>₹500</td>
+        </tr>
+    </table>
+
+    <div class="total-box">
+        <div class="total">
+            <p><span>Subtotal</span><span>₹28,500</span></p>
+            <p><span>Tax</span><span>₹500</span></p>
+            <p class="net"><span>Net Salary</span><span>₹28,000</span></p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Thank You • Employee Salary Invoice</p>
+    </div>
+</div>
+
+</body>
+</html>
